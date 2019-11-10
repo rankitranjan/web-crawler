@@ -1,0 +1,1 @@
+json.array! @pages, :url, :parsed_assets, :parsed__links

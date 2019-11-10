@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All Domains</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @domains.each do |domain| %>
+      <tr>
+        <td><%= domain.name %></td>
+        <td><%= domain.url %></td>
+        <td><%= link_to 'Edit', edit_domain_path(domain) %> |</td>
+        <td><%= link_to 'ShowCrawledPages', "/domains/#{domain.id}/pages.json" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New Domain to crawl', new_domain_path %>
